@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300&family=Great+Vibes&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" media="screen" href="{% static 'pianomaster/css/style.css' %}"/> 
+        <link rel="stylesheet" media="print" href="{% static 'pianomaster/css/print.css' %}" />
+        
+        <meta charset="utf-8"/>
+        <meta content="text/html"/>
+        <meta name="Description" CONTENT="Piano Master is providing custom piano sheets suggestions to play & practice."/>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
+    
+        <title>
+            {% block title %}
+            Piano Master
+            {% endblock %}
+        </title>
+        <link rel="shortcut icon" type="image" href="{% static 'pianomaster/img/clavier_ico.png' %}"/>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="box1"> 
+                <nav>
+                    {% block nav %}
+                    <a href="/"> <strong> Home </strong> </a>
+                    {% endblock %}
+                </nav>
+        <div class="container" id="printableArea">
+            <div class="box1"> 
+                <header><h1>Piano Master suggestion</h1></header>
+                <img src="{% static 'pianomaster/img/piano_ico.png' %}" alt="Grand Piano" width="100" height="100" />
+                {% block content %}
+                <!-- <script src="{% static 'mastersrecipes/js/formatDate.js' %}"></script> -->
+                <p style="font-size: 110%;"> Hello {{ first_name }}, what do you want to play & practice today?  As today is {{ date }}, I suggest you: </p>
+            </div>
+            
+            <div class="box2"> 
+                <h2> {{ title }} </h2>
+            </div>
+            
+            <div class="box3">
+                <h5> Sheet music:</h5>
+                    <p>  </p>
+            </div>
+
+            <!-- <div class="box4">
+                <h5> Instructions:</h5>
+                    <p> {{ instructions|escape|linebreaks }} </p>
+            </div> -->
+        </div>
+
+        <div class="container">
+            <div class="box6">
+                <!-- <p style="font-size: 110%;"> Please feel free to print or save as pdf! </p>
+                <form method="POST">
+                    {% csrf_token %}
+                    <button value="1" id="imprim" name="imprim" onClick="printDiv('printableArea');var imprim=1;">Print</button>
+                    <script>
+                        var imprim;
+                        if (document.getElementById('imprim').onClick) {
+                            imprim = 1;
+                        }
+                    </script>
+                    <script src="{% static 'mastersrecipes/js/printDiv.js' %}"></script>
+                    <script src="{% static 'mastersrecipes/js/imprim.js' %}"></script>
+
+                </form> -->
+                <form method="POST">
+                    <h5> Please {{ first_name }}, could you provide a rating for Piano Master suggestion? From 1 star (not satified) to 5 stars (great suggestion)</h5>
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="fieldWrapper form-group">
+                        {{ field.label_tag }}
+                        {{ field }}
+                    </div>
+                    {% endfor %}
+                    <div class="rating" name="rating" id="star_rating" required=True >
+                        <a href="continueOrNot/5/" title="Give 5 stars" data-value="5" >★</a>
+                        <a href="continueOrNot/4/" title="Give 4 stars" data-value="4" >★</a>
+                        <a href="continueOrNot/3/" title="Give 3 stars" data-value="3" >★</a>
+                        <a href="continueOrNot/2/" title="Give 2 stars" data-value="2" >★</a>
+                        <a href="continueOrNot/1/" title="Give 1 star"  data-value="1" >★</a>
+                    </div>
+                </form>
+            </div>
+            {% endblock %}
+        </div>
+    </body>
+
+    <footer>
+        <div class="container">
+            <div class="box7">     
+                <h5>Disclaimer & privacy : </h5>
+                <p style="font-size: 10px; line-height: 5px">Informations provided (name and related to the session, </p>
+                <p style="font-size: 10px; line-height: 5px">ratings, datetimes and contact informations)</p>
+                <p style="font-size: 10px; line-height: 5px">will be confidentially recorded to improve Piano Master suggestions</p>
+                <p style="font-size: 10px; line-height: 5px">Piano Master is in his initial version, the app is under developpment,</p>
+                <p style="font-size: 10px; line-height: 5px">so it may have some bugs.</p>
+                <p style="font-size: 10px; line-height: 5px"> <strong> © 2022 Piano Master - Amandine Pinget, PhD - </strong></p>
+                <p style="font-size: 10px; line-height: 5px"> <strong> <a href="https://amandine-pinget-phd-en.webflow.io/" target="_blank"> https://amandine-pinget-phd-en.webflow.io/ </a> - All Rights Reserved </strong></p>
+            </div>
+        </div>
+    </footer>
+    
+</html>

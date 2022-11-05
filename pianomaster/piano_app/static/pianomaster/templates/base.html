@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300&family=Great+Vibes&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="{% static 'pianomaster/css/style.css' %}"/>
+
+    <meta charset="utf-8"/>
+    <meta content="text/html"/>
+    <meta name="Description" CONTENT="Piano Master is providing custom piano sheets suggestions to play & practice."/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
+
+    {% load crispy_forms_tags %}
+    <title>
+        {% block title %}
+        Piano Master
+        {% endblock %}
+    </title>
+    <link rel="shortcut icon" type="image" href="{% static 'pianomaster/img/clavier_ico.png' %}"/>
+    </head>
+
+    <body>
+    <div class="container">
+        <div class="box1"> 
+            <header><h1>Welcome to Piano Master!</h1></header>
+            <h2>No ideas for playing & practicing piano? Just ask me</h2>
+        </div>            
+        <div class="box5">
+            <section id="content">
+                {% block content %}
+                    {% load static %}
+                    <img src="{% static 'pianomaster/img/piano_ico.png' %}" alt="Grand Piano" width="150" height="150"/>
+                    <!--Initial form & auth-->
+                    <div>
+                        <h5>Please enter your name to start:</h5>
+                        <form method="POST" class="uniForm" id="first_name">
+                        {% csrf_token %}
+                                {{musicianform.first_name|as_crispy_field}}
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </form>
+                    </div>
+                {% endblock %}
+            </section>
+        </div>    
+    </div>
+    </body>
+
+    <footer>
+        <div class="container">
+            <div class="box7">     
+                <h5>Disclaimer & privacy : </h5>
+                <p style="font-size: 10px; line-height: 5px">Informations provided (name and related to the session, </p>
+                <p style="font-size: 10px; line-height: 5px">ratings, datetimes and contact informations)</p>
+                <p style="font-size: 10px; line-height: 5px">will be confidentially recorded to improve Piano Master suggestions</p>
+                <p style="font-size: 10px; line-height: 5px">Piano Master is in his initial version, the app is under developpment,</p>
+                <p style="font-size: 10px; line-height: 5px">so it may have some bugs.</p>
+                <p style="font-size: 10px; line-height: 5px"> <strong> © 2022 Piano Master - Amandine Pinget, PhD - </strong></p>
+                <p style="font-size: 10px; line-height: 5px"> <strong> <a href="https://amandine-pinget-phd-en.webflow.io/" target="_blank"> https://amandine-pinget-phd-en.webflow.io/ </a> - All Rights Reserved </strong></p>
+            </div>
+        </div>
+    </footer>
+    
+</html>
