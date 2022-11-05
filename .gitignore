@@ -141,3 +141,6 @@ database.ini
 
 #Repo for staticfiles
 staticfiles/
+
+# csv
+*.csv
