@@ -144,3 +144,6 @@ staticfiles/
 
 # csv
 *.csv
+
+# Other
+pianomaster/pianomaster/settings.py
