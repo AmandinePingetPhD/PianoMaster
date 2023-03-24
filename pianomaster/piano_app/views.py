@@ -20,7 +20,7 @@ class LoginView(TemplateView):
   def post(self, request, **kwargs):
 
     username = request.POST.get('username', False)
-    password = request.POST.get('password', False)
+    #password = request.POST.get('password', False)
     user = authenticate(username=username, password=password)
     if user is not None and user.is_active:
         login(request, user)
@@ -29,7 +29,7 @@ class LoginView(TemplateView):
         response.set_cookie('date', datetime.date.today())
         return response
 
-    return render(request, 'identified.html')
+    return render(request, 'identified.html') # Redirection à voir
 
 
 class LogoutView(TemplateView):

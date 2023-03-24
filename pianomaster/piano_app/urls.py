@@ -11,8 +11,10 @@ app_name = 'piano_app'
 
 urlpatterns = [
     path('', login_required(TemplateView.as_view(template_name='login.html'))),
-    path('identified', LogoutView.as_view(template_name='identified.html')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+#path('identified', LogoutView.as_view(template_name='identified.html')),
 
 # urlpatterns = [
 #     path('', views.home, name='home'),
