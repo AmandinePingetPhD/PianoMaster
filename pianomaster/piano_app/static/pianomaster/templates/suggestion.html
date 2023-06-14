@@ -35,18 +35,22 @@
             <div class="box1"> 
                 <header><h1>Piano Master suggestion</h1></header>
                 <img src="{% static 'pianomaster/img/piano_ico.png' %}" alt="Grand Piano" width="100" height="100" />
+               
                 {% block content %}
-                <!-- <script src="{% static 'mastersrecipes/js/formatDate.js' %}"></script> -->
                 <p style="font-size: 110%;"> Hello {{ first_name }}, what do you want to play & practice today?  As today is {{ date }}, I suggest you: </p>
             </div>
             
             <div class="box2"> 
-                <h2> {{ title }} </h2>
+                <h2> Title: {{ title }} </h2>
+                <h3> Author: {{ author }} </h3>
+                <h4> Level: {{ level }} </h4>
+                <h4> Kind: {{ kind }} </h4>
+                <h4> Number of sheet: {{ numsheet }} </h4>
             </div>
             
             <div class="box3">
                 <h5> Sheet music:</h5>
-                    <p>  </p>
+                    <p> Link/sheets to add (next versions)  </p>
             </div>
 
             <!-- <div class="box4">
@@ -102,7 +106,7 @@
                 <p style="font-size: 10px; line-height: 5px">will be confidentially recorded to improve Piano Master suggestions</p>
                 <p style="font-size: 10px; line-height: 5px">Piano Master is in his initial version, the app is under developpment,</p>
                 <p style="font-size: 10px; line-height: 5px">so it may have some bugs.</p>
-                <p style="font-size: 10px; line-height: 5px"> <strong> © 2022 Piano Master - Amandine Pinget, PhD - </strong></p>
+                <p style="font-size: 10px; line-height: 5px"> <strong> © 2023 Piano Master - Amandine Pinget, PhD - </strong></p>
                 <p style="font-size: 10px; line-height: 5px"> <strong> <a href="https://amandine-pinget-phd-en.webflow.io/" target="_blank"> https://amandine-pinget-phd-en.webflow.io/ </a> - All Rights Reserved </strong></p>
             </div>
         </div>
