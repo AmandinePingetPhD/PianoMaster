@@ -19,7 +19,7 @@ class PianoSheet(models.Model):
     title = models.TextField()
     author = models.TextField()
     level = models.IntegerField(default=0)
-    kind =  models.TextField()
+    kind = models.TextField()
     compteur = models.IntegerField(default=0)
     numsheet = models.IntegerField(default=1)
 
