@@ -33,7 +33,7 @@ contents = csv.reader(file, delimiter=';')
  
 # SQL query to insert data into the
 # person table
-insert_records = "INSERT INTO PianoSheet (title, author, level, numsheet, kind) VALUES(?, ?, ?, ?, ?)"
+insert_records = "INSERT INTO PianoSheet (title, author, level, numsheet, kind, compteur) VALUES(?, ?, ?, ?, ?, ?)"
  
 # Importing the contents of the file
 # into our person table
