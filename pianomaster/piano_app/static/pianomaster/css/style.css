@@ -12,6 +12,7 @@
     /* centrer */
     margin-right: 0px;
     margin-left: 0px;
+    background-color:#f8f8f2;
   }
   
   .box1 { 
@@ -187,7 +188,7 @@
                   }
   
   /* Mise en page pour mobile */
-  /* @media all and (max-device-width: 480px) { 
+  @media all and (max-device-width: 480px) { 
     footer
       {
           margin-right: 0;
@@ -197,10 +198,10 @@
           width: 100%;
           line-height: 15px;
       }
-  } */
+  }
   
   /* Mise en page pour tablettes */
-  /* @media (max-width: 767px) {
+  @media (max-width: 767px) {
     footer
       {
           margin-right: 0;
@@ -210,7 +211,17 @@
           width: 100%;
           line-height: 15px;
       }
-  } */
+  }
   
   /* Mise en page pour les grands écrans */
-  /* @media (min-width: 1200px) { ... } */
+  @media (min-width: 1200px) {
+    footer
+      {
+          margin-right: 0;
+          margin-left: 0;
+          padding-bottom: 0;
+          display: inline block;
+          width: 100%;
+          line-height: 15px;
+      }
+  }
