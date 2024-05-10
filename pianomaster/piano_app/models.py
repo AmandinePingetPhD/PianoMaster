@@ -12,6 +12,7 @@ from django.utils.timezone import now
 # import de données à faire avec csv
 # pour admin favicon.ico not found
 
+
 class PianoSheet(models.Model):
     """Table PianoSheet for partitions."""
 
