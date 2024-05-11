@@ -12,7 +12,8 @@ Piano Master App :
 * Developpement / back-end : Python
 * Front-end based on Django framework with JavaScript
 * BDD : SQLite (initial) - evolution : document-based SGBD (MongoDB for music sheets)
-* To be deployed with : to define
+MySQL with Pythonanywhere?
+* To be deployed with : Pythonanywhere : in progress
 
 Evolution :
 * Other instruments (guitar,...)
