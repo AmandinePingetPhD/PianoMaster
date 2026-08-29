@@ -3,13 +3,13 @@
 <html lang="en">
 
     <head>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300&family=Great+Vibes&display=swap" rel="stylesheet"> 
 
-    <link rel="stylesheet" href="{% static 'pianomaster/css/style.css' %}"/>
+    <link rel="stylesheet" media="screen" href="{% static 'pianomaster/css/style.css' %}"/> 
+    <!-- <link rel="stylesheet" media="print" href="{% static 'pianomaster/css/print.css' %}" /> -->
 
     <meta charset="utf-8"/>
     <meta content="text/html"/>
@@ -23,28 +23,26 @@
         {% endblock %}
     </title>
     <link rel="shortcut icon" type="image" href="{% static 'pianomaster/img/clavier_ico.png' %}"/>
-    </head>
+</head>
 
     <body>
     <div class="container">
         <div class="box1"> 
-            <header><h1>Welcome to Piano Master!</h1></header>
-            <h2>No ideas for playing & practicing piano? Just ask me</h2>
+            <nav>
+            {% block nav %}
+            <a href="/"> <strong> Home </strong> </a>
+            {% endblock %}
+            </nav>
+            <header><h1>Thank you for your visit, {{ first_name }}!</h1></header>
+            <img src="{% static 'pianomaster/img/piano_ico.png' %}" alt="Grand Piano" width="100" height="100" />
         </div>            
-        <div class="box5">
+        <div class="box2">
             <section id="content">
                 {% block content %}
                     {% load static %}
-                    <img src="{% static 'pianomaster/img/piano_ico.png' %}" alt="Grand Piano" width="150" height="150"/>
-                    <!--Initial form & auth-->
-                    <div>
-                        <h5>Please enter your name & password to start:</h5>
-                        <form method="POST"  role="form">
-                            {% csrf_token %}
-                            <input type="text" name="username" placeholder="User">
-                            <input type="password" name="password" placeholder="Password">
-                            <input type="submit" value="Login" />
-                        </form>
+                    <div style="margin:10px">
+                        <p style="font-size: 110%;">Hope you have enjoyed the suggestions. Have a nice playing time and see you later! </p>
+                        <h1>Piano Master</h1>
                     </div>
                 {% endblock %}
             </section>

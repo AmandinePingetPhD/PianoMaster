@@ -148,3 +148,4 @@ staticfiles/
 # Other
 pianomaster/pianomaster/settings.py
 post-it.txt
+pianomaster/pythonsqlite.db

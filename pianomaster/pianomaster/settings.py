@@ -64,7 +64,7 @@ LOGIN_REDIRECT_URL = "/"
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS':  [os.path.join(BASE_DIR, "piano_app\\static\\pianomaster\\templates")],
+        'DIRS':  [os.path.join(BASE_DIR, "piano_app/static/pianomaster/templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
